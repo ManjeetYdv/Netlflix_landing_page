@@ -1,0 +1,452 @@
+:root {
+  --primary-color: #e50914;
+  --dark-color: #141414;             /* css vatriables*/
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+
+}
+
+body{
+
+        background-color: #000;             /*this bg color notnworking  , so using internal css */
+        color:#999;
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing :antialiased;   /*makes the edges of graphics objects or fonts smoother*/
+    }
+
+   
+
+ul{
+    list-style: none;
+}
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+h1 , h2 , h3 , h4{
+    color:#fff;
+}
+
+p{
+    margin: 0.5rem 0;
+}
+
+img{
+    width:100%;
+}
+
+
+/*showcase*/
+
+.showcase{
+    width:100%;
+    height: 93vh;
+    position: relative;
+    background: url(../images/Netflix-Background.jpg)no-repeat center center/cover;
+}
+
+.showcase::after{            /*overlay*/
+    content: '';
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    z-index: 1;
+    background-color: rgba(0 , 0 , 0 , 0.5);
+    box-shadow:  inset 100px 80px 100px #000  ,  inset -100px -80px 100px #000 ;   /* without inset shadow would be on bottom and right sides , using it shadow will be formed on top and left*/
+
+
+}
+.showcase-top{
+    height:90px;
+    position:relative;
+    z-index: 2;
+}
+
+.showcase-top img{
+    width:180px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50% ,-50%);
+
+
+}
+
+.showcase-top a{
+    position: absolute;
+    top:50%;
+    right:0;
+    transform :translate(-50% , -50%);
+    
+}
+
+.showcase-content{
+    position:relative;
+    margin: auto;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    margin-top: 8rem;
+    z-index: 2;
+
+
+}
+
+.showcase-content h1{
+    font-size: 4.8rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem ;
+
+}
+
+.showcase-content p{
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.25;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+
+    
+}
+
+/*tab-item section */
+.tabs .container{
+    display: grid;
+    grid-template-columns: repeat(3  , 1fr);   /*all will be equal sized*/
+    grid-gap : 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}
+
+.container{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    
+}
+
+.tabs p{
+    font-size: 1.2rem;
+    padding-top: 0.6rem;
+
+}
+.tabs .container >div{         /*selects all div in tabs>container*/
+    padding: 1.3rem 0;
+}
+
+.tabs .container >div:hover{
+    color:#fff;
+    cursor: pointer;
+
+}
+.tab-border{
+    border-bottom: solid 4px var(--primary-color);
+}
+/*Hide all tab content initially */
+#tab-1-content, 
+#tab-2-content,
+#tab-3-content{
+    display: none;
+} 
+.show{
+    display: block !important;
+}
+
+
+/*tab-content*/
+#tab-1-content .content-1-inner{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding:3rem 0;
+}
+
+#tab-2-content{
+    background-color: black;
+}
+#tab-2-content .tab-2-content-top{
+    /* display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center; */
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap:1rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+
+   
+}
+#tab-2-content .tab-2-content-bottom{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap:1rem;
+    align-content:center;
+    justify-content: center;
+    align-items:center
+}
+#tab-2-content{
+    padding:3.5rem 0;
+}
+
+
+/* tab-3 content */
+
+#tab-3-content .tab-3-content-top{
+    display: flex;
+    align-content:center;
+    justify-content: center;
+    align-items:center;
+    padding:3rem 0;
+
+    
+}
+.tab-3-content-top p{
+    padding-right:2rem;
+}
+.tab-3-content-top a{
+    padding-left: 1rem;
+}
+
+
+/*table*/
+
+.table {
+    width:100%;
+    border-collapse: collapse;
+
+}
+.table thead th{
+    padding:0.8rem;
+}
+.table tbody tr td{
+    color:#999;
+    padding:0.8rem 1.2rem;
+    text-align: center;
+}
+.table tbody tr td:first-child{
+    text-align: left;
+}
+.table tbody tr:nth-child(odd){
+    background-color: #222;
+}
+
+
+
+/*footer*/
+.footer{
+    width:75%;
+    margin:2rem auto;
+}
+.footer p{
+    margin-bottom:1rem;
+
+}
+.footer a{
+    color:#999;
+    font-size:0.9rem;
+   
+    
+}
+.footer li{
+    line-height: 2;
+}
+.footer-cols{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+
+}
+
+
+
+
+
+
+/*utility clases */
+
+/* buttons */
+.btn{
+
+    display: inline-block;
+    background: var(--primary-color);
+    color:#fff;
+    cursor: pointer;
+    padding:0.4rem 1.3rem;
+    margin-right: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    border:none;
+    outline:0;
+    border-radius:2px;
+    box-shadow: 0 1px  rgba(0 , 0 , 0 , 0.45);   
+
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+.btn-rounded{
+    border-radius: 5px;
+
+}
+
+.btn-xl{
+    text-transform: uppercase;
+    text-align: center;
+    font-size:1.8rem;
+    padding:1.4rem 2rem;
+
+}
+.btn-lg{
+    text-transform: uppercase;
+    text-align: center;
+    font-size:1rem;
+    padding:0.8rem 1.3rem;
+    
+}
+.btn-icon{
+    margin-left: 1rem;
+}
+/*tabs*/
+.tabs{
+    background-color: #141414;
+    border-bottom: solid 3px #3d3d3d;
+    padding-top:2rem;
+}
+
+.txt-xl{
+   
+    font-size:2rem;
+    margin-bottom: 1rem;
+    color:#fff;
+
+}
+.txt-lg{
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color:#fff;
+}
+
+.txt-dark{
+    color:var(--dark-color);
+}
+
+.text-avg{
+    color:#fff;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+@media(max-width:960px){
+
+    .showcase-top img{
+        top:30%;
+        left:5%;
+        transform: translate(0);
+     }
+
+     .showcase-content h1{
+         font-size: 3rem;
+         margin-bottom: 0.5rem;
+     }
+     .showcase-content p{
+         font-size: 1.5rem;
+    }
+
+    .showcase{
+        height: 87vh;
+    }
+    .btn-xl{
+        font-size:1.4rem; ;
+        padding:1.1rem 1.5rem;
+    }
+    
+    .btn-lg{
+        font-size: 0.9rem;
+        padding:0.7rem 1.2rem;
+    }
+
+    .txt-xl{
+        font-size: 1.7rem;
+    }
+    .txt-lg{
+        font-size: 1.4rem;;
+    }
+    .txt-avg{
+        font-size: 1.1rem;
+
+    }
+    .footer-cols{
+        grid-template-columns: repeat(2 , 1fr);
+        
+    }
+    .footer p a{
+        margin-left:2rem;
+        
+    }
+
+    .hide-sm{
+        display: none;
+    }
+
+
+
+}
+
+@media(max-width:700px){
+    #tab-1-content .content-1-inner{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .content-1-inner img{
+        width:80%;
+    }
+
+    #tab-2-content .tab-2-content-top{
+        display: block;
+        text-align: center;
+
+    }
+    #tab-2-content .tab-2-content-bottom{
+      grid-template-columns: 1fr;
+       
+    }
+    #tab-3-content .tab-3-content-top{
+        display: block;
+        text-align: center;
+    }
+    .table{
+        overflow-x:scroll;
+    }
+    .showcase::after{            /*overlay*/
+         box-shadow:  inset 60px 60px 100px #000  ,  inset -60px -60px 100px #000 ;   /* without inset shadow would be on bottom and right sides , using it shadow will be formed on top and left*/
+    
+    
+    }
+
+
+}
