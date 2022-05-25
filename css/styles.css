@@ -12,7 +12,7 @@
 
 body{
 
-        background-color: #000;             /*this bg color notnworking  , so using internal css */
+        background-color: #000;         
         color:#999;
         font-family: Arial, Helvetica, sans-serif;
         -webkit-font-smoothing :antialiased;   /*makes the edges of graphics objects or fonts smoother*/
@@ -62,7 +62,7 @@ img{
     width:100%;
     z-index: 1;
     background-color: rgba(0 , 0 , 0 , 0.5);
-    box-shadow:  inset 100px 80px 100px #000  ,  inset -100px -80px 100px #000 ;   /* without inset shadow would be on bottom and right sides , using it shadow will be formed on top and left*/
+    box-shadow:  inset 100px 80px 100px #000  ,  inset -100px -80px 100px #000 ;  
 
 
 }
@@ -443,8 +443,7 @@ img{
         overflow-x:scroll;
     }
     .showcase::after{            /*overlay*/
-         box-shadow:  inset 60px 60px 100px #000  ,  inset -60px -60px 100px #000 ;   /* without inset shadow would be on bottom and right sides , using it shadow will be formed on top and left*/
-    
+         box-shadow:  inset 60px 60px 100px #000  ,  inset -60px -60px 100px #000 ; 
     
     }
 
